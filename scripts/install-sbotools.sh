@@ -3,7 +3,7 @@
 # Install sbotools
 
 # download Slackbuild from SBo
-wget --no-check-certificate https://slackbuilds.org/slackbuilds/15.0/system/sbotools.tar.gz
+wget https://slackbuilds.org/slackbuilds/15.0/system/sbotools.tar.gz
 tar --strip-components=1 -zxvf sbotools.tar.gz
 rm sbotools.tar.gz
 

@@ -14,13 +14,8 @@ RUN /bin/sh /scripts/slack-update.sh
 RUN /bin/sh /scripts/packages.sh
 
 # Install sbotools
-#WORKDIR /work
-#RUN /bin/bash /scripts/install-sbotools.sh
-#RUN gpg2 --keyserver hkp://keys.openpgp.org \
-#         --recv-keys 720E73097A7E6E5577ECAB9C3F617144D7238786
-#RUN sbosnap fetch
-#RUN sboinstall --reinstall --batch sbotools
-#RUN rm -rf /tmp/SBo /root/sbo_logs/*
+WORKDIR /work
+RUN /bin/bash /scripts/install-sbotools.sh
 
 # Install packages used in SlackBuilding
-#RUN sboinstall --batch sbo-create sbo-maintainer-tools
+RUN sboinstall --batch sbo-create sbo-maintainer-tools
