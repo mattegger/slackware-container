@@ -20,8 +20,13 @@ installpkg /tmp/sbotools*.tgz
 rm /work/*
 rm /tmp/sbotools*.tgz
 
-gpg2 --keyserver hkp://keys.openpgp.org \
+# import SBo gpg key
+gpg2 --keyserver hkp://keyserver.ubuntu.com \
      --recv-keys 720E73097A7E6E5577ECAB9C3F617144D7238786
+
+# clone SBo tree
 sbosnap fetch
+
+# reinstall sbotools using sbotools, delete temp files and logs
 sboinstall --reinstall --batch sbotools
 rm -rf /tmp/SBo /root/sbo_logs/*
